@@ -35,39 +35,29 @@ function updateProgress(stepIndex) {
     document.getElementById('progressBar').style.width = `${progress}%`;
 }
 
-// YouTube API
-function onYouTubeIframeAPIReady() {
-    const videoConfigs = [
-        { id: 'player-1', videoId: 'vJG698U2Mvo', nextBtn: 'next-1' },
-        { id: 'player-2', videoId: 'FWSxSQsspiQ', nextBtn: 'next-2' },
-        { id: 'player-3a', videoId: 'Hrph2EW9VjY', nextBtn: 'next-3', multi: true },
-        { id: 'player-3b', videoId: 'EXRoQGHx-80', nextBtn: 'next-3', multi: true },
-        { id: 'player-4', videoId: 'HqekWf-JC-A', nextBtn: 'next-4' },
-        { id: 'player-6', videoId: '_SsccRkLLzU', nextBtn: 'next-6' }
-    ];
+// Able Player Integration
+$(document).on('ableplayerready', function(event) {
+    const player = event.target.ablePlayer;
+    const mediaId = player.$media.attr('id');
+    
+    // Config mapping for buttons
+    const nextBtnMap = {
+        'player-1': 'next-1',
+        'player-2': 'next-2',
+        'player-3a': 'next-3',
+        'player-3b': 'next-3',
+        'player-4': 'next-4',
+        'player-6': 'next-6'
+    };
 
-    videoConfigs.forEach(config => {
-        players[config.id] = new YT.Player(config.id, {
-            height: '100%',
-            width: '100%',
-            videoId: config.videoId,
-            playerVars: {
-                'modestbranding': 1,
-                'rel': 0,
-                'origin': window.location.origin
-            },
-            events: {
-                'onStateChange': (event) => onPlayerStateChange(event, config)
-            }
+    // Listen for media completion
+    player.$media.on('ended', function() {
+        handleVideoCompletion({
+            id: mediaId,
+            nextBtn: nextBtnMap[mediaId]
         });
     });
-}
-
-function onPlayerStateChange(event, config) {
-    if (event.data === YT.PlayerState.ENDED) {
-        handleVideoCompletion(config);
-    }
-}
+});
 
 function handleVideoCompletion(config) {
     completedVideos.add(config.id);
