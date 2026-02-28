@@ -88,23 +88,36 @@ section.active {
 }
 
 .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
     margin: 20px 0;
     background: #000;
     border-radius: 4px;
     overflow: hidden;
+    width: 100%;
+    /* Default to container width */
+    max-width: 100%;
 }
 
-.video-wrapper iframe,
-.video-wrapper .able-player-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* Base styles for Able Player to ensure it fills the wrapper */
+.able-player-container {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+}
+
+.able-player-container iframe {
+    width: 100% !important;
     height: 100% !important;
+}
+
+/* Optional Class for Full-Width Extension */
+.video-full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-radius: 0;
 }
 
 /* Ensure Able Player's control bar doesn't get cut off if we have a fixed height */
