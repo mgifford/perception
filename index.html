@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perception & Divergent Realities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Perception & Divergent Realities</h1>
+        <p>An exploration of epistemic humility and the limits of human observation.</p>
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </header>
+
+    <main id="app">
+        <!-- Introduction -->
+        <section id="step-0" class="active">
+            <h2>Welcome</h2>
+            <p>We often assume that because we see something with our own eyes, our perception is an objective record of reality. However, decades of psychological research show that our attention is limited, our expectations shape our senses, and our identities influence our interpretations.</p>
+            <p>This experience will walk you through several classic demonstrations. You must engage with each one before moving forward.</p>
+            <div class="controls">
+                <span></span>
+                <button class="primary" onclick="nextStep()">Begin Experience</button>
+            </div>
+        </section>
+
+        <!-- Phase 1: Inattentional Blindness -->
+        <section id="step-1">
+            <h2>Phase 1: Attention Limits</h2>
+            <p>Watch the following video carefully. Your task is to count how many times the players in <strong>white</strong> pass the basketball. Ignore the players in black.</p>
+            <div class="video-wrapper">
+                <div id="player-1"></div>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-1">How many passes did you count? What else did you notice?</label>
+                <textarea id="reflection-1" placeholder="Type your observation here..."></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-1" class="primary" onclick="nextStep()" disabled>Finish video to continue</button>
+            </div>
+            <div class="research-basis">
+                <details>
+                    <summary>Research Basis</summary>
+                    <p><strong>Inattentional Blindness:</strong> Simons & Chabris (1999) demonstrated that when we are intensely focused on a task, we can fail to notice an "obvious" but unexpected stimulus—like a person in a gorilla suit walking through a game.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Phase 2: Change Blindness -->
+        <section id="step-2">
+            <h2>Phase 2: Change Blindness</h2>
+            <p>Observe the interaction in this real-world study. Pay close attention to the environment and the participants.</p>
+            <div class="video-wrapper">
+                <div id="player-2"></div>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-2">What does this imply about our ability to notice large changes in our environment?</label>
+                <textarea id="reflection-2" placeholder="Reflect on what you saw..."></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-2" class="primary" onclick="nextStep()" disabled>Finish video to continue</button>
+            </div>
+            <div class="research-basis">
+                <details>
+                    <summary>Research Basis</summary>
+                    <p><strong>Change Blindness:</strong> Simons & Levin (1998) found that 50% of people failed to notice when the person they were talking to was replaced by someone else during a brief interruption. Direct observation does not guarantee accurate noticing.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Phase 3: Sensory Construction -->
+        <section id="step-3">
+            <h2>Phase 3: Sensory Construction</h2>
+            <p>Our brain doesn't just "see" or "hear"; it constructs a reality based on competing inputs. Watch the "McGurk Effect" first, then the auditory ambiguity.</p>
+            <div class="video-wrapper">
+                <div id="player-3a"></div>
+            </div>
+            <div class="video-wrapper">
+                <div id="player-3b"></div>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-3">If two sincere observers disagree on what they heard or saw, who is "right"? What role does expectation play?</label>
+                <textarea id="reflection-3" placeholder="Share your thoughts..."></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-3" class="primary" onclick="nextStep()" disabled>Finish both videos to continue</button>
+            </div>
+            <div class="research-basis">
+                <details>
+                    <summary>Research Basis</summary>
+                    <p><strong>Multimodal Integration:</strong> McGurk & MacDonald (1976) showed that visual information can override auditory data. Similarly, "Yanny vs Laurel" shows how frequency focus and prior expectation can lead different people to hear the exact same stimulus completely differently.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Phase 4: Choice Blindness -->
+        <section id="step-4">
+            <h2>Phase 4: Choice Blindness</h2>
+            <p>Do we actually know why we make the choices we do?</p>
+            <div class="video-wrapper">
+                <div id="player-4"></div>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-4">Do people justify choices they didn't actually make? How might this apply to political or social interpretation?</label>
+                <textarea id="reflection-4" placeholder="Your reflection..."></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-4" class="primary" onclick="nextStep()" disabled>Finish video to continue</button>
+            </div>
+            <div class="research-basis">
+                <details>
+                    <summary>Research Basis</summary>
+                    <p><strong>Choice Blindness:</strong> Johansson et al. (2005) demonstrated that people often fail to notice when their choice is swapped for the alternative, and will go on to provide detailed justifications for the choice they never made.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Phase 5: Group Identity -->
+        <section id="step-5">
+            <h2>Phase 5: Identity and Perception</h2>
+            <p>Now we move from neutral dots and sounds to social realities. Consider the classic case of "They Saw a Game."</p>
+            <div class="content-text">
+                <p>In 1951, a football game between Dartmouth and Princeton became a landmark in psychology. Students from both schools watched the same film of the game and were asked to count infractions.</p>
+                <ul>
+                    <li>Princeton students "saw" twice as many Dartmouth infractions as Dartmouth students did.</li>
+                    <li>Both groups were sincere. They didn't just "say" they saw more; their identity literally shaped their visual attention.</li>
+                </ul>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-5">Could two groups sincerely interpret the same footage differently? What mechanisms might explain this?</label>
+                <textarea id="reflection-5" placeholder="Consider the role of motivated cognition..."></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-5" class="primary" onclick="nextStep()">Continue</button>
+            </div>
+            <div class="research-basis">
+                <details>
+                    <summary>Research Basis</summary>
+                    <p><strong>Motivated Cognition:</strong> Hastorf & Cantril (1954) argued that there is no "objective" game for everyone, but rather a different sequence of events for different observers. Granot et al. (2014) later showed that group identity even directs where our eyes move across a screen.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Phase 6: Real-World Stimulus -->
+        <section id="step-6">
+            <h2>Phase 6: Perspective</h2>
+            <p>Watch this short clip. Focus purely on the observable actions first.</p>
+            <div class="video-wrapper">
+                <div id="player-6"></div>
+            </div>
+            <div class="reflection-box">
+                <label for="reflection-6a">1. Describe ONLY observable actions (the "what"):</label>
+                <textarea id="reflection-6a" placeholder="e.g., A man is running..."></textarea>
+                
+                <label for="reflection-6b">2. Describe your interpretation (the "why"):</label>
+                <textarea id="reflection-6b" placeholder="What is happening in the scene?"></textarea>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button id="next-6" class="primary" onclick="nextStep()" disabled>Finish video to continue</button>
+            </div>
+        </section>
+
+        <!-- Final Reflection -->
+        <section id="step-7">
+            <h2>Closing Reflection</h2>
+            <p>You have reached the end of the experience. Before you leave, consider these final questions:</p>
+            <div class="reflection-box">
+                <ul>
+                    <li>When have you been absolutely confident and subsequently proven wrong?</li>
+                    <li>What kind of evidence would it take to change your mind on a deeply held belief?</li>
+                    <li>How can you reduce overconfidence in your own perception going forward?</li>
+                </ul>
+                <p class="note">Epistemic humility doesn't mean everything is a lie; it means being aware that our lens is always present.</p>
+            </div>
+            <div class="controls">
+                <button class="secondary" onclick="prevStep()">Back</button>
+                <button class="primary" onclick="window.print()">Export Reflections (Print to PDF)</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Perception & Divergent Realities. Built for educational use.</p>
+        <button class="reset-btn" onclick="resetProgress()">Reset All Progress</button>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
