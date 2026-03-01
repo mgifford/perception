@@ -2,6 +2,8 @@
 
 An interactive educational experience designed to demonstrate perceptual bias, attention limits, and epistemic humility.
 
+> **⚠️ Repository Setup Note:** If you're the repository owner, please see [BRANCH_SETUP.md](BRANCH_SETUP.md) for instructions on setting `main` as the default branch.
+
 ## Features
 - **Video Gating:** Users cannot advance until they have watched the required psychological demonstration videos.
 - **Progress Persistence:** Progress and reflections are saved automatically to `localStorage`.
