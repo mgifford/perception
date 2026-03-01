@@ -98,32 +98,32 @@ section.active {
 }
 
 /* Base styles for Able Player to ensure it fills the wrapper */
-.able-player-container {
+.able-player,
+.able-player-container,
+.able-player-inner,
+.able-player-media-container,
+.able-player-surface,
+.able-player.able-youtube,
+.able-player.able-video {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 100% !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Maintain aspect ratio on the media container specifically */
+.able-player-media-container,
+.able-player iframe {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 16 / 9;
 }
 
-.able-player-container iframe {
-    width: 100% !important;
+.able-player iframe {
     height: 100% !important;
-}
-
-/* Optional Class for Full-Width Extension */
-.video-full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    border-radius: 0;
-}
-
-/* Ensure Able Player's control bar doesn't get cut off if we have a fixed height */
-.able-player-container {
-    display: flex;
-    flex-direction: column;
+    /* Within the aspect-ratio container */
 }
 
 .reflection-box {
